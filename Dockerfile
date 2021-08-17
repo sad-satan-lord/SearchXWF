@@ -18,6 +18,6 @@ COPY . .
 
 RUN pip3 install --no-cache-dir -r addons.txt
 
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN bash setup.sh
 
 CMD ["bash", "startup.sh"]
