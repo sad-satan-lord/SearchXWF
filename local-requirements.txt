@@ -4,7 +4,6 @@ shazamio
 tabulate
 hachoir
 gingerit
-aria2p
 ProfanityDetector
 numpy
 imutils
