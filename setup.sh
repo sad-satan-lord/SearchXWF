@@ -1,5 +1,6 @@
 update_and_install_packages () {
-    apt -qq update -y
+    apt-get update -y
+    apt-get upgrade -y
     apt -qq install -y --no-install-recommends \
         git \
         ffmpeg \
