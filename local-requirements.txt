@@ -1,7 +1,11 @@
 aiofiles
+aria2p
 aiohttp
 apscheduler
+asyncurban
 cairosvg
+cv2
+carbonnow
 cloudscraper
 colour
 covid
@@ -11,6 +15,7 @@ DateTime
 emoji
 fonttools
 geopy
+gingerit
 gitpython
 glitch_this
 google-api-python-client
@@ -24,6 +29,7 @@ heroku3
 html-telegraph-poster
 humanize
 IMDbPY
+imutils
 jikanpy
 justwatch
 lottie
@@ -36,6 +42,7 @@ Pillow
 prettytable
 psutil
 psycopg2
+ProfanityDetector
 PyDictionary
 pyfiglet
 PyGithub
@@ -55,11 +62,13 @@ search-engine-parser
 selenium
 setuptools
 ShazamAPI
+shazamio
 spamwatch
 speedtest-cli
 sqlalchemy-json
 sqlalchemy==1.3.23
 telegraph
+tabulate
 TgCrypto
 tswift
 ujson
@@ -69,6 +78,7 @@ vcsi
 wand
 wget
 git+https://github.com/goldsmith/Wikipedia
+git+https://github.com/buddhhu/search-engine-parser.git
 git+https://github.com/buddhhu/ofox.git
 youtube-search-python
 youtube_dl
