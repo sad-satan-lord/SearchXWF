@@ -8,6 +8,8 @@ COPY .env .
 
 COPY requirements.txt .
 
+COPY local-requirements.txt .
+
 COPY addons.txt .
 
 COPY . .
