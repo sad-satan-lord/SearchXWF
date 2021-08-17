@@ -39,7 +39,5 @@ gingerit
 html-telegraph-poster
 pyyaml
 hachoir
-aria2p
-gdown
 qrcode
 shazamio
