@@ -61,7 +61,6 @@ search-engine-parser
 selenium
 setuptools
 ShazamAPI
-shazamio
 spamwatch
 speedtest-cli
 sqlalchemy-json
