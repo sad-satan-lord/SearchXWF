@@ -5,7 +5,6 @@ update_and_install_packages () {
 
 _run_all () {
     update_and_install_packages
-    install_helper_packages
     pip3 install –upgrade pip
     pip3 install --no-cache-dir -r requirements.txt
     pip3 install --no-cache-dir -r local-requirements.txt
