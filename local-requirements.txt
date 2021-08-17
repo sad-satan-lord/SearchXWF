@@ -1,4 +1,15 @@
 aiofiles
+play-scraper
+shazamio
+tabulate
+hachoir
+gingerit
+aria2p
+ProfanityDetector
+numpy
+imutils
+carbonnow
+asyncurban
 oauth2client
 aiohttp
 apscheduler
@@ -55,6 +66,7 @@ regex
 requests
 search-engine-parser
 selenium
+scikit-image
 setuptools
 ShazamAPI
 spamwatch
