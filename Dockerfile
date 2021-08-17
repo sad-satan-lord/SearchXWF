@@ -1,5 +1,9 @@
 FROM python:3.9
 
+ENV TZ=Asia/Kolkata
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN git clone https://github.com/TeamUltroid/Ultroid.git /root/TeamUltroid/
 
 WORKDIR /root/TeamUltroid/
