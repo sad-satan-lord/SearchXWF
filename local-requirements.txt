@@ -1,4 +1,5 @@
 aiofiles
+oauth2client
 aiohttp
 apscheduler
 cairosvg
