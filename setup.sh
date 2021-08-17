@@ -15,7 +15,6 @@ _run_all () {
     pip3 install –upgrade pip
     pip3 install -r addons.txt
     pip3 install -r requirements.txt
-    pip3 install -r local-requirements.txt
 }
 
 _run_all
