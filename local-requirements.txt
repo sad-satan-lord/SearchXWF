@@ -37,7 +37,6 @@ git+https://github.com/buddhhu/search-engine-parser.git
 git+https://github.com/buddhhu/ofox.git
 gingerit
 html-telegraph-poster
-pyyaml
 hachoir
 aria2p
 qrcode
