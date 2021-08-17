@@ -48,6 +48,7 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
+oauth2client
 qrcode
 randomstuff.py
 regex
