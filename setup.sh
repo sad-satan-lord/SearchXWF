@@ -7,7 +7,6 @@ update_and_install_packages () {
 _run_all () {
     update_and_install_packages
     pip3 install –upgrade pip
-    pip3 install -r addons.txt
     pip3 install -r requirements.txt
 }
 
