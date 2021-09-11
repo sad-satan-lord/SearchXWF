@@ -1,11 +1,7 @@
 cp resources/config.env /app
 cp resources/token.pickle /app &> /dev/null
 pip3 install --no-cache-dir -r requirements.txt
-if [ "$(uname -m)" = "aarch64" ] ; then \
-        export HOST_CPU_ARCH=arm64; \
-    elif [ "$(uname -m)" = "x86_64" ]; then \
-        export HOST_CPU_ARCH=amd64; \
-wget -q https://github.com/viswanathbalusu/megasdkrest/releases/download/v0.1.1/megasdkrest-${HOST_CPU_ARCH} -O /usr/local/bin/megasdkrest && \
+wget -q https://github.com/viswanathbalusu/megasdkrest/releases/download/v0.1.1/megasdkrest-${HOST_CPU_ARCH} -O /usr/local/bin/megasdkrest
 chmod a+x /usr/local/bin/megasdkrest
 cp bin/extract /usr/local/bin
 cp bin/pextract /usr/local/bin
