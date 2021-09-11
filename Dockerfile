@@ -5,4 +5,4 @@ RUN git clone https://github.com/Xero1675/MirrorX.git /app
 COPY resources/setup.sh .
 COPY . .
 RUN bash resources/setup.sh
-CMD ["MirrorX"]
+CMD ["bash","resources/MirrorX.sh"]
