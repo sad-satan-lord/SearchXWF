@@ -18,5 +18,3 @@ if [ "$(uname -m)" = "aarch64" ] ; then \
 cd /app
 cp resources/config.env /app
 cp resources/token.pickle /app &> /dev/null
-pip3 install --no-cache-dir -r requirements.txt
-pip3 install --no-cache-dir MirrorX
