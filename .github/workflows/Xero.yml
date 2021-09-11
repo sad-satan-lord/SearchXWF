@@ -36,7 +36,7 @@ jobs:
         run: |
           cd source || exit 1
           docker container prune --force || true
-          docker-compose up -d
+          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
           docker image ls
 
       - name: Running Docker
