@@ -10,7 +10,10 @@ RUN if [ "$(uname -m)" = "aarch64" ] ; then \
     sed -i 's/main/main non-free/g' /etc/apt/sources.list && \
     apt-get -qq install -y tzdata curl aria2 p7zip-full p7zip-rar wget xz-utils libmagic-dev gcc && \
     wget -q https://github.com/viswanathbalusu/megasdkrest/releases/download/v0.1.1/megasdkrest-${HOST_CPU_ARCH} -O /usr/local/bin/megasdkrest && \
-    chmod a+x /usr/local/bin/megasdkrest
+    chmod a+x /usr/local/bin/megasdkrest && \
+    wget -q https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-${HOST_CPU_ARCH}-static.tar.xz && \
+    tar -xf ff*.tar.xz && rm -rf *.tar.xz && \
+    mv ff*/ff* /usr/local/bin/ && rm -rf ff*
 WORKDIR /app
 RUN chmod 777 /app
 RUN git clone https://github.com/Xero1675/MirrorX.git /app
