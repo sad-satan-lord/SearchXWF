@@ -1,4 +1,4 @@
-FROM iamliquidx/mirrorx:latest
+FROM python:slim
 WORKDIR /app
 RUN chmod 777 /app
 RUN git clone https://github.com/Xero1675/MirrorX.git /app
