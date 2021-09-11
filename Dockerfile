@@ -1,4 +1,4 @@
-FROM breakdowns/mega-sdk-python:latest
+FROM iamliquidx/mirrorx:latest
 WORKDIR /app
 RUN chmod 777 /app
 RUN git clone https://github.com/Xero1675/MirrorX.git /app
