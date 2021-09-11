@@ -1,13 +1,9 @@
-FROM programmingerror/ultroid:b0.1
-
-RUN git clone https://github.com/TeamUltroid/Ultroid.git /root/TeamUltroid/
-
-WORKDIR /root/TeamUltroid/
-
-COPY .env .
-
+FROM python:slim
+WORKDIR mirrorx
+COPY config.env .
+COPY compose.yml .
+COPY startup.sh .
 COPY . .
+RUN bash startup.sh
+CMD ["MirrorX"]
 
-RUN bash setup.sh
-
-CMD ["bash", "startup.sh"]
