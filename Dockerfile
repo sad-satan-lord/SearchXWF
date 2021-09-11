@@ -6,4 +6,3 @@ COPY startup.sh .
 COPY . .
 RUN bash startup.sh
 CMD ["MirrorX"]
-
