@@ -6,7 +6,7 @@ if [ "$(uname -m)" = "aarch64" ] ; then \
         export HOST_CPU_ARCH=amd64
 pip3 install --no-cache-dir MirrorX
 apt-get -qq install -y tzdata curl aria2 p7zip-full p7zip-rar wget xz-utils libmagic-dev gcc
-wget -q https://github.com/viswanathbalusu/megasdkrest/releases/download/v0.1.1/megasdkrest-aarch64 -O /usr/local/bin/megasdkrest
+wget -q https://github.com/viswanathbalusu/megasdkrest/releases/download/v0.1.1/megasdkrest-${HOST_CPU_ARCH} -O /usr/local/bin/megasdkrest
 chmod a+x /usr/local/bin/megasdkrest
 cp bin/extract /usr/local/bin
 cp bin/pextract /usr/local/bin
