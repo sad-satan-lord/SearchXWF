@@ -1,96 +1,58 @@
 name: Virtual Environment
 
 on:
-
   push:
-
     branches: [ main ]
-
-    paths-ignore: 'README.md'
-
+    paths-ignore: 
+      - 'README.md'
+      - 'resources/**'
   workflow_dispatch:
-
    
-
 env:
-
-  # Change these values
-
-  GitHubMail: "ahadshaikh1675@gmail.com"
-
-  GitHubName: "Ahad1675" 
-
-  Branch: "master"
+  GitHubMail: ${{ secrets.GH_MAIL }}
+  GitHubName: ${{ secrets.GH_USER }}
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout
-
         uses: actions/checkout@main
 
       - name: Set Git Configs & Secrets
-
         run: |
-
           git config --global user.email ${GitHubMail}
-
           git config --global user.name ${GitHubName}
-
           git config --global credential.helper store
-
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
 
-      - name: Clone The Secret Mirror Repository
+      - name: Cleanup Storage
+        uses: rokibhasansagar/slimhub_actions@main
 
+      - name: Clone The Repository
         run: |
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} -b main source
 
-          git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.GH_REPO }} -b ${Branch} source
-
-      - name: Compile The Docker Container
-
+      - name: Compile The Mirroring Docker Container
         run: |
-
           cd source || exit 1
-
           docker container prune --force || true
-
-          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t bot
-
+          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
           docker image ls
 
-      - name: running Docker
-
+      - name: Running Docker
         timeout-minutes: 340
-
         continue-on-error: true
-
         run: |
-
-          docker run --privileged --rm -i bot
+          docker run --privileged --rm -i mirror-bot
 
       - name: Loop Workflow
-
         continue-on-error: true
-
         run: |
-
-          # ${GITHUB_REPOSITORY} is the repo slug which runs this script
-
           git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
-
           cd loop || exit 1
-
-          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
-
-          git add looper.txt
-
+          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > loop.txt
+          git add loop.txt
           git commit -m "Workflow : Loop"
-
           git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
-
