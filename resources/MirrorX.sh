@@ -1,3 +1,1 @@
-#!/bin/bash
-pip3 install -U MirrorX
-MirrorXBot
+python3 -m bot
