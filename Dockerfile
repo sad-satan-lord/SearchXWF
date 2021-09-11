@@ -1,6 +1,7 @@
 FROM ghcr.io/iamliquidx/mirrorx:latest
 WORKDIR /app
 RUN chmod 777 /app
+RUN apt-get install git -y
 RUN git clone https://github.com/Xero1675/MirrorX.git /app
 COPY resources/setup.sh .
 COPY . .
