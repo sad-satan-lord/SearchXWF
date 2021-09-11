@@ -27,8 +27,6 @@ jobs:
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
 
-      - name: Cleanup Storage
-        uses: rokibhasansagar/slimhub_actions@main
 
       - name: Clone The Repository
         run: |
