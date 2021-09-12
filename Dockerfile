@@ -1,6 +1,5 @@
 FROM ghcr.io/iamliquidx/mirrorx:latest
-RUN apt-get -qq update && \
-    apt-get -qq install -y git
+RUN apt-get -qq update && apt-get -qq install -y git
 WORKDIR /app
 RUN chmod 777 /app
 RUN apt-get install git -y
