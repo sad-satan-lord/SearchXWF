@@ -11,7 +11,7 @@ on:
 env:
   GitHubMail: ${{ secrets.GH_MAIL }}
   GitHubName: ${{ secrets.GH_USER }}
-  Branch: "master"
+  Branch: "main"
 jobs:
   build:
     runs-on: ubuntu-latest
