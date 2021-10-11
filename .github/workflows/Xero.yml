@@ -32,19 +32,18 @@ jobs:
         run: |
           git clone https://${{ secrets.GH_TOKEN }}@github.com/${{ secrets.MIRROR_REPOSLUG }} -b ${Branch} source
 
-      - name: Compile The SearchX Docker
+      - name: Compile The Mirroring Docker Container
         run: |
           cd source || exit 1
-          sudo apt install python3
-          sudo snap install docker 
-          sudo dockerd
-          sudo docker build . -t search-bot
+          docker container prune --force || true
+          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
+          docker image ls
 
-      - name: Running Docker
+      - name: running Docker
         timeout-minutes: 340
         continue-on-error: true
         run: |
-          sudo docker run search-bot
+          docker run --privileged --rm -i mirror-bot
 
 
       - name: Loop Workflow
