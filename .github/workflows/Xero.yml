@@ -32,9 +32,6 @@ jobs:
         run: |
           git clone https://${{ secrets.GH_TOKEN }}@github.com/${{ secrets.MIRROR_REPOSLUG }} -b ${Branch} source
 
-      - name: Clone The Secret Mirror Repository
-        run: |
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/${{ secrets.MIRROR_REPOSLUG }} -b ${Branch} source
       - name: Compile The Mirroring Docker Container
         run: |
           cd source || exit 1
