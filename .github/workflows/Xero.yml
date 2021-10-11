@@ -35,15 +35,17 @@ jobs:
       - name: Compile The Mirroring Docker Container
         run: |
           cd source || exit 1
-          docker container prune --force || true
-          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
-          docker image ls
+          sudo apt install python3
+          sudo snap install docker
+          sudo dockerd
+
 
       - name: running Docker
         timeout-minutes: 340
         continue-on-error: true
         run: |
-          docker run --privileged --rm -i mirror-bot
+          sudo docker build . -t search-bot
+          sudo docker run search-bot
 
 
       - name: Loop Workflow
